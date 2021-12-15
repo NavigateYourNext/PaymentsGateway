@@ -30,7 +30,7 @@ public class StepDefinitionClass extends BaseClass {
     public void make_a_post_request() {
         RestAssured.baseURI = properties.get("url").toString();
         httpRequest = RestAssured.given().pathParam("id",uuid);
-        httpResponse = httpRequest.request(Method.POST,"/{id}/refund");
+        httpResponse = httpRequest.request(Method.POST,properties.get("pathparameter").toString());
     }
 
     @Then("Response code should be received as {int}")
